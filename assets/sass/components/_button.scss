@@ -1,0 +1,91 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 0.9rem 0.9rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .9s;
+        position: relative;
+        font-size: $default-font-size; 
+        //Change for <button> element
+        border: none;
+        cursor: pointer;
+    }
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 .5rem 90rem rgba($color-grey-dark, .2);
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-.1rem);
+        box-shadow: 0 .5rem 6rem rgba($color-grey-dark, .2);
+    }
+
+    &--white {
+        background-color: $color-primary;
+        /* text-shadow: .1rem .1rem; */
+        color: $color-grey-dark;
+        // padding-top: .1rem;
+        // opacity: 0.9;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &--blue {
+        background-color: $color-primary;
+        /* text-shadow: .1rem .1rem; */
+        color: $color-black;
+        // padding-top: .1rem;
+        // opacity: 0.9;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &--animated {
+        animation: moveFromBottom 0.5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-grey-dark;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-grey-dark;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

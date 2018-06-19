@@ -1,0 +1,18 @@
+// This variable shows the animated background
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.69;
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    //Works with Html elements like videos
+    object-fit: cover;
+  }
+}
